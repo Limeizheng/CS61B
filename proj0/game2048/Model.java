@@ -115,7 +115,7 @@ public class Model extends Observable {
      *    value, then the leading two tiles in the direction of motion merge,
      *    and the trailing tile does not.
      */
-    private int singleColumn(int row,int col,boolean[][] ismerge){
+    private int SingleColumn(int row,int col,boolean[][] ismerge){
         for (int i=row+1;i<=size()-1;i++){
             if(_board.tile(col,i) != null ) {
                 if(_board.tile(col,i).value() == _board.tile(col,row).value() && !ismerge[i][col])
@@ -141,7 +141,7 @@ public class Model extends Observable {
             for (int j=0;j<_board.size();j++)
                 if(_board.tile(j, i) != null){
                     Tile t = _board.tile(j, i);
-                    int nextrow = singleColumn(i,j,ismerge);
+                    int nextrow = SingleColumn(i,j,ismerge);
                     ismerge[nextrow][j] = _board.move(j,nextrow,t);
                     if(ismerge[nextrow][j])
                         _score += _board.tile(j,nextrow).value();
