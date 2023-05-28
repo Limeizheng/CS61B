@@ -2,10 +2,8 @@
  *  @author YOUR NAME HERE
  */
 public class Collatz {
-
-    /** Returns the nextNumber in a Collatz sequence. */
+    /** Buggy implementation of nextNumber! */
     public static int nextNumber(int n) {
-        // TODO: Fill in this method.
         if (n % 2 == 0){
             n = n/2;
             return n;
